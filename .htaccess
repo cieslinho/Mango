@@ -1,0 +1,4 @@
+#Przekierowanie na https
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://mangoclub.pl
