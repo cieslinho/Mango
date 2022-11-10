@@ -690,9 +690,9 @@ section .map {
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	z-index: 500;
 	opacity: 0;
 	visibility: hidden;
+	z-index: -500;
 	transition: opacity 0.3s;
 	&::before {
 		position: absolute;
@@ -710,24 +710,16 @@ section .map {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		position: relative;
 		padding: 1em;
 		width: 265px;
 		height: 265px;
-		opacity: 0;
-		transition: opacity 0.3s;
-		visibility: hidden;
+		position: relative;
 	}
 	&__img {
 		margin-bottom: 0.5em;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		border: 2px solid $cta-color;
-		transition: border 0.3s;
-		&:hover {
-			border: 2px solid $main-color;
-		}
 	}
 	&__link {
 		padding: 0.5em;
@@ -753,6 +745,7 @@ section .map {
 		height: 35px;
 		padding: 0.3em;
 		transition: stroke 0.3s, fill 0.3s;
+		cursor: pointer;
 		&:hover {
 			fill: $third-color;
 			stroke: $third-color;
@@ -760,10 +753,10 @@ section .map {
 	}
 }
 
-.active-popup,
-.active-box {
+.active-popup {
 	opacity: 1;
 	visibility: visible;
+	z-index: 1000;
 }
 
 // FOOTER
@@ -953,6 +946,13 @@ section .map {
 		}
 		&__form {
 			width: 70%;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.students {
+		&__box {
+			max-width: 400px;
 		}
 	}
 }
